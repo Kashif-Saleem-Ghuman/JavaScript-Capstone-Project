@@ -1,0 +1,45 @@
+:root {
+  --bg: rgb(16, 15, 23);
+  --clr: rgb(228, 216, 4);
+}
+
+body {
+  color: white;
+  background-color: var(--bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header ul,li,a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 6vw;
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+
+.logo {
+  height: 50px;
+}
+
+.hello {
+  color: red;
+}
+
+h1 {
+  color: brown;
+  font-family: sans-serif;
+}
