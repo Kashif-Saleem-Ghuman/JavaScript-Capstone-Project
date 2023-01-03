@@ -43,3 +43,27 @@ h1 {
   color: brown;
   font-family: sans-serif;
 }
+
+.wrapper {
+  margin: 5vw 5vw;
+  display: grid;
+  flex: 1;
+  border: 2px solid white;
+  min-height: 100vh;
+}
+
+.card {
+  width: 25%;
+  border: 1px solid pink;
+height: max-content;
+margin: 5vw;
+}
+
+.image-movie {
+  width: 100px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
