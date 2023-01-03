@@ -96,3 +96,14 @@ h1 {
 .heart {
   font-size: 1.25rem;
 }
+
+.footer {
+  font-size: larger;
+  padding: 1vw 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer a {
+  color: var(--clr);
+}
