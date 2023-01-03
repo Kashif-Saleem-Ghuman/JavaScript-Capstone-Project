@@ -45,3 +45,54 @@ h1 {
   color: brown;
   font-family: sans-serif;
 }
+
+.wrapper {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.card {
+  width: 17%;
+  border: 1px solid pink;
+  height: max-content;
+  margin: 1vw;
+}
+
+.image-movie {
+  width: 100%;
+}
+
+.button-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--clr);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: larger;
+}
+
+.movie-title {
+  margin: 0;
+}
+
+.title-heart-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.like-number {
+  font-size: 1.3rem;
+}
+
+.heart {
+  font-size: 1.25rem;
+}
