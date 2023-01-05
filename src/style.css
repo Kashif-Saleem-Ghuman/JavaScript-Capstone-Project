@@ -60,6 +60,11 @@ h1 {
   border: 1px solid pink;
   height: max-content;
   margin: 1vw;
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .image-movie {
@@ -106,4 +111,12 @@ h1 {
 
 .footer a {
   color: var(--clr);
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: red;
 }
