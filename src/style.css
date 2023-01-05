@@ -120,3 +120,20 @@ h1 {
 .fa-heart:hover {
   color: red;
 }
+
+.show-counter {
+  font-size: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.counter {
+  font-size: 1.5rem;
+}
+
+.counter-wrapper {
+  transition: all 0.5s ease-in-out;
+}
+
+.counter-wrapper:hover {
+  text-decoration: underline;
+}
