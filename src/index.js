@@ -1,5 +1,6 @@
 import './style.css';
 import { newLike, getLikes, likedItemID } from './Modules/likes.js';
+import { newComment, getComments } from './Modules/comments.js';
 
 // to fetch movie data from API
 const getSeries = async () => {
@@ -70,19 +71,36 @@ const popup = async () => {
   const moviesArr = await getSeries();
   const popup = document.querySelector('#popup-wrapper');
   const btns = document.querySelectorAll('.button-wrapper');
+
   btns.forEach((btn, i) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       document.querySelector('header').style.display = 'none';
       document.querySelector('section').style.display = 'none';
       document.querySelector('footer').style.display = 'none';
       popup.style.display = 'block';
-      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div></div>`;
+      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div>
+      <form><input id="username" type="text" placeholder="name" /><input id="comment" type="text" placeholder="comment" /><input id="comment" type="submit" value="submit" /></form>
+      <div class="comments-section"></div></div>`;
       const cross = document.querySelector('.fa-times');
       cross.addEventListener('click', () => {
         popup.style.display = 'none';
         document.querySelector('header').style.display = 'block';
         document.querySelector('section').style.display = 'flex';
         document.querySelector('footer').style.display = 'flex';
+      });
+      getComments(i);
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.querySelector('#username').value;
+        const comment = document.querySelector('#comment').value;
+        newComment(i, username, comment);
+      });
+      const allComments = await getComments(i);
+      allComments.forEach((comment) => {
+        if (comment.username !== '[object Object]' && comment.comment !== '[object Object]') {
+          document.querySelector('.comments-section').innerHTML += `<div><h4>${comment.username}</h4><br/><p>${comment.comment}</p></div>`;
+        }
       });
     });
   });
