@@ -5,7 +5,8 @@ import { newLike, getLikes, likedItemID } from './Modules/likes.js';
 const getSeries = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const series = await response.json();
-  return series;
+  const data = series.splice(0, 15);
+  return data;
 };
 
 // to get likes data from the API
@@ -63,3 +64,27 @@ all.addEventListener('click', async (e) => {
     e.target.nextElementSibling.innerHTML = updatedLike;
   }
 });
+
+const popup = async () => {
+  await displayMovies();
+  const moviesArr = await getSeries();
+  const popup = document.querySelector('#popup-wrapper');
+  const btns = document.querySelectorAll('.button-wrapper');
+  btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      document.querySelector('header').style.display = 'none';
+      document.querySelector('section').style.display = 'none';
+      document.querySelector('footer').style.display = 'none';
+      popup.style.display = 'block';
+      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div></div>`;
+      const cross = document.querySelector('.fa-times');
+      cross.addEventListener('click', () => {
+        popup.style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('section').style.display = 'flex';
+        document.querySelector('footer').style.display = 'flex';
+      });
+    });
+  });
+};
+popup();
