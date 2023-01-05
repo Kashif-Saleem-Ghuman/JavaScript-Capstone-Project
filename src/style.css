@@ -120,3 +120,26 @@ h1 {
 .fa-heart:hover {
   color: red;
 }
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup h1 {
+  color: var(--clr);
+  margin: 0;
+  padding: 0;
+}
+
+.movie-data {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-data p {
+  width: 30%;
+}
