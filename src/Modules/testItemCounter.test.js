@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-// import displayCounter from './itemsCounter.js';
-
-function sum(a, b) {
-  return a + b;
-}
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
-=======
 // mock the movies array
 const movies = [
   { name: 'under the dome' },
@@ -59,4 +48,3 @@ describe('movies length check', () => {
     expect(displayCounter(movies2)).toBe(16);
   });
 });
->>>>>>> 5e1158a (add test for items counter)
