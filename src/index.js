@@ -1,5 +1,6 @@
 import './style.css';
 import { newLike, getLikes, likedItemID } from './Modules/likes.js';
+import { newComment, getComments } from './Modules/comments.js';
 import displayCounter from './Modules/itemsCounter.js';
 
 // to fetch movie data from API
@@ -88,6 +89,11 @@ const popup = async () => {
       document.querySelector('footer').style.display = 'none';
       popup.style.display = 'block';
       popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div></div>`;
+      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div>
+      <form><input id="username" type="text" placeholder="name" /><input id="comment" type="text" placeholder="comment" /><input id="comment" type="submit" value="submit" /></form>
+      <div class="counts"></div>
+      <div class="comments-section"></div></div>`;
+
       const cross = document.querySelector('.fa-times');
       cross.addEventListener('click', () => {
         popup.style.display = 'none';
@@ -95,6 +101,34 @@ const popup = async () => {
         document.querySelector('section').style.display = 'flex';
         document.querySelector('footer').style.display = 'flex';
       });
+
+      const showComments = async () => {
+        const allComments = await getComments(i);
+        allComments.forEach((comment) => {
+          if (comment.username != '[object Object]' && comment.comment != '[object Object]') {  // eslint-disable-line
+            const cmSec = document.querySelector('.comments-section');
+            const div = document.createElement('div');
+            div.classList.add('c4c');
+            div.innerHTML = `<h4>${comment.username}</h4><br/><p>${comment.comment}</p>`;
+            cmSec.appendChild(div);
+          }
+        });
+        const counts = document.querySelectorAll('.c4c');
+        const countDiv = document.querySelector('.counts');
+        countDiv.innerHTML = `<h2>Comments:-${counts.length}</h2>`;
+      };
+      const form = document.querySelector('form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.querySelector('#username').value;
+        const comment = document.querySelector('#comment').value;
+        await newComment(i, username, comment);
+        document.querySelector('.comments-section').innerHTML = '';
+        await showComments();
+        form.reset();
+      });
+      showComments();
+
     });
   });
 };

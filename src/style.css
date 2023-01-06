@@ -121,6 +121,29 @@ h1 {
   color: red;
 }
 
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup h1 {
+  color: var(--clr);
+  margin: 0;
+  padding: 0;
+}
+
+.movie-data {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-data p {
+  width: 30%;
+}
+
 .show-counter {
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
