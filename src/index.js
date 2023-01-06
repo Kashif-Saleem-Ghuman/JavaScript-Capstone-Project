@@ -128,7 +128,6 @@ const popup = async () => {
         form.reset();
       });
       showComments();
-
     });
   });
 };
