@@ -60,9 +60,9 @@ none
 
 - Make sure to intall linters using this link: https://github.com/microverseinc/linters-config.
 
--Make sure to add project dependancies ( webpack)
+- Make sure to add project dependancies ( webpack)
 
--Run 'npm install' to add all dependencies 
+- Run 'npm install' to add all dependencies 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
