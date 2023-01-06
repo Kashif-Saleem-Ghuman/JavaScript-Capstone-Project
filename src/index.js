@@ -73,7 +73,7 @@ const popup = async () => {
   const btns = document.querySelectorAll('.button-wrapper');
 
   btns.forEach((btn, i) => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', () => {
       document.querySelector('header').style.display = 'none';
       document.querySelector('section').style.display = 'none';
       document.querySelector('footer').style.display = 'none';
@@ -88,20 +88,29 @@ const popup = async () => {
         document.querySelector('section').style.display = 'flex';
         document.querySelector('footer').style.display = 'flex';
       });
-      getComments(i);
+
+      const showComments = async () => {
+        const allComments = await getComments(i);
+        allComments.forEach((comment) => {
+          if (comment.username != '[object Object]' && comment.comment != '[object Object]') {  // eslint-disable-line
+            const cmSec = document.querySelector('.comments-section');
+            const div = document.createElement('div');
+            div.innerHTML = `<h4>${comment.username}</h4><br/><p>${comment.comment}</p>`;
+            cmSec.appendChild(div);
+          }
+        });
+      };
       const form = document.querySelector('form');
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const username = document.querySelector('#username').value;
         const comment = document.querySelector('#comment').value;
-        newComment(i, username, comment);
+        await newComment(i, username, comment);
+        document.querySelector('.comments-section').innerHTML = '';
+        await showComments();
+        form.reset();
       });
-      const allComments = await getComments(i);
-      allComments.forEach((comment) => {
-        if (comment.username !== '[object Object]' && comment.comment !== '[object Object]') {
-          document.querySelector('.comments-section').innerHTML += `<div><h4>${comment.username}</h4><br/><p>${comment.comment}</p></div>`;
-        }
-      });
+      showComments();
     });
   });
 };
