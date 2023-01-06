@@ -149,7 +149,8 @@ h1 {
   gap: 10px;
 }
 
-.movie-text h2, p {
+.movie-text h2,
+p {
   margin: 0;
   padding: 0;
 }
@@ -189,7 +190,7 @@ h1 {
   border: 2px solid var(--bg);
 }
 
-.form textarea  {
+.form textarea {
   padding: 10px 20px;
   background-color: rgb(255, 255, 255);
   border: 2px solid var(--bg);
