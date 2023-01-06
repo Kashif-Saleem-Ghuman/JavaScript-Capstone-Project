@@ -88,9 +88,8 @@ const popup = async () => {
       document.querySelector('section').style.display = 'none';
       document.querySelector('footer').style.display = 'none';
       popup.style.display = 'block';
-      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div></div>`;
-      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-3x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div>
-      <form><input id="username" type="text" placeholder="name" /><input id="comment" type="text" placeholder="comment" /><input id="comment" type="submit" value="submit" /></form>
+      popup.innerHTML = `<div class="popup"><i class="fa fa-times fa-2x" aria-hidden="true"></i><div class="movie-data"><img class="pop-img" src=${moviesArr[i].image.medium} alt="movie"/><div class="movie-text"><h1>${moviesArr[i].name}</h1><h2>${moviesArr[i].genres}</h2><p>${moviesArr[i].summary}</p></div></div>
+      <form class="form"><input id="username" type="text" placeholder="name" required /><textarea placeholder="Add a comment" id="comment"  rows="4" cols="70" required></textarea><input type="submit" value="submit" /></form>
       <div class="counts"></div>
       <div class="comments-section"></div></div>`;
 
@@ -109,7 +108,7 @@ const popup = async () => {
             const cmSec = document.querySelector('.comments-section');
             const div = document.createElement('div');
             div.classList.add('c4c');
-            div.innerHTML = `<h4>${comment.username}</h4><br/><p>${comment.comment}</p>`;
+            div.innerHTML = `<div class="cmin"><p>${comment.creation_date}</p><p class="usr">${comment.username} : </p><p>${comment.comment}</p></div>`;
             cmSec.appendChild(div);
           }
         });
