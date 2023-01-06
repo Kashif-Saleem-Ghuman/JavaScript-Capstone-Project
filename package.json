@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "watch": "jest --watch *.js",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Kashif-Saleem-Ghuman/avaScript-Capstone-Project#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.2",
     "eslint": "^7.32.0",
