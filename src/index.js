@@ -1,6 +1,7 @@
 import './style.css';
 import { newLike, getLikes, likedItemID } from './Modules/likes.js';
 import { newComment, getComments } from './Modules/comments.js';
+import displayCounter from './Modules/itemsCounter.js';
 
 // to fetch movie data from API
 const getSeries = async () => {
@@ -45,9 +46,17 @@ const displayMovies = async () => {
 
     moviesWrapper.innerHTML += html;
   });
+  // const x = await displayCounter();
+  // console.log(x);
+  // document.querySelector('.show-counter').innerHTML = await displayCounter();
 };
 
-displayMovies();
+const callFunc = async () => {
+  await displayMovies();
+  const dc = await displayCounter();
+  document.querySelector('.show-counter').innerHTML = dc;
+};
+callFunc();
 
 // to hit the heart button and increase likes
 const all = document.querySelector('body');
@@ -64,6 +73,8 @@ all.addEventListener('click', async (e) => {
     // insert the update like value in the like inner html
     e.target.nextElementSibling.innerHTML = updatedLike;
   }
+
+  // const x = await displayCounter();
 });
 
 const popup = async () => {
@@ -71,7 +82,6 @@ const popup = async () => {
   const moviesArr = await getSeries();
   const popup = document.querySelector('#popup-wrapper');
   const btns = document.querySelectorAll('.button-wrapper');
-
   btns.forEach((btn, i) => {
     btn.addEventListener('click', () => {
       document.querySelector('header').style.display = 'none';

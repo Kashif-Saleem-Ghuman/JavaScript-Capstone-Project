@@ -143,3 +143,20 @@ h1 {
 .movie-data p {
   width: 30%;
 }
+
+.show-counter {
+  font-size: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.counter {
+  font-size: 1.5rem;
+}
+
+.counter-wrapper {
+  transition: all 0.5s ease-in-out;
+}
+
+.counter-wrapper:hover {
+  text-decoration: underline;
+}
