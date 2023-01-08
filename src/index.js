@@ -7,7 +7,7 @@ import displayCounter from './Modules/itemsCounter.js';
 const getSeries = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const series = await response.json();
-  const data = series.splice(0, 15);
+  const data = series.splice(0, 16);
   return data;
 };
 
