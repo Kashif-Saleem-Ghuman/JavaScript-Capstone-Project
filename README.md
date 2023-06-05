@@ -1,13 +1,9 @@
 <a name="readme-top"></a>
 
 <div align="center">
-
-  <img src="./src/images/murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
+  <h3><b>Movie Web App</b></h3>
 </div>
+<a name="readme-top"></a>
 
 # 📗 Table of Contents
 
@@ -98,12 +94,17 @@ Clone this repository to your desired folder:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👤**Authors** <a name="authors"></a>
-<h4>Kashif Saleem</h4>
-<h4>Jitinder Kumar</h4>
+👤 **Kashif Saleem**
 
-- GitHub: [@githubhandle](https://github.com/Kashif-Saleem-Ghuman)
-- Twitter: [@twitterhandle](https://twitter.com/Kashif14Saleem)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kashif-saleem-45ba95215/)
+- GitHub:[![Kashif](https://img.shields.io/badge/-Kashif-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Kashif-Saleem-Ghuman)
+- Twitter:[![Kashif](https://img.shields.io/badge/-Kashif-blue?logo=Twitter&logoColor=skyBlue&style=plastic)](https://twitter.com/Kashif14Saleem)
+- LinkedIn:[![Kashif](https://img.shields.io/badge/-Kashif-white?logo=LinkedIn&logoColor=181717&style=plastic)](https://www.linkedin.com/in/kashifsaleemghuman/)
+
+👤 **Jitinder Kumar**
+
+- GitHub:[![Jitinder](https://img.shields.io/badge/-Jitinder-white?logo=GitHub&logoColor=181717&style=plastic)](/)
+- Twitter:[![Kashif](https://img.shields.io/badge/-Jitinder-blue?logo=Twitter&logoColor=skyBlue&style=plastic)](/)
+- LinkedIn:[![Kashif](https://img.shields.io/badge/-Jitinder-white?logo=LinkedIn&logoColor=181717&style=plastic)](/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
