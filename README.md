@@ -41,7 +41,7 @@ Add your likes and comments on your favourite movies.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Link](https://dev--willowy-liger-e839c5.netlify.app/#)
+[Link](https://movflx-app.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
